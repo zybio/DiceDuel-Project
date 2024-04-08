@@ -1,0 +1,154 @@
+@import "variables";
+@import "mixins";
+
+:root{
+    --animate-delay: 0.5s;
+}
+
+html {
+  line-height: 1.5rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #1b1b1b;
+}
+
+body {
+    font-family: $yusei;
+  background-image: url("../images/duelbg.jpg");
+  background-size: cover;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1 {
+    margin-left: 1rem;
+}
+
+.site-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 100%;
+  @include flex;
+  flex-direction: column;
+  background: $kindablue;
+}
+
+.game-container {
+  background-color: silver;
+  background: $silverbg;
+  padding: 1rem;
+}
+
+.gamefield {
+  @include flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.die{
+    max-width: 70px;
+}
+
+.player-row {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+}
+
+.player-image {
+  @include flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.player-content{
+    @include flex;
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 1rem;
+    border: 3px solid black;
+    border-radius: 2rem;
+
+    h3{
+        margin: 0;
+    }
+    
+    @include media(){
+        flex-direction: row;
+        gap: 1rem;
+
+        p{
+            margin-top: 0;
+        }
+    }
+}
+
+.player2-stand {
+  .player-image {
+    flex-direction: row-reverse;
+  }
+  .player-content{
+    // generate a triangle on the right side of the player
+    &::after{
+        content: "";
+        position: absolute;
+        top: 30%;
+        right: -20px;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-left: 20px solid black;
+        border-bottom: 10px solid transparent;
+    
+  }
+}
+}
+
+.player1-stand {
+  .player-content{
+    // generate a triangle on the left side of the player
+    &::after{
+        content: "";
+        position: absolute;
+        top: 30%;
+        left: -20px;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-right: 20px solid black;
+        border-bottom: 10px solid transparent;
+    }
+  }
+}
+
+.score-number{
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.animate__kaibaRoll{
+    animation-name: kaibaRoll;
+}
+
+@keyframes kaibaRoll{
+0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%,0,0) rotate(120deg);
+    transform: translate3d(100%,0,0) rotate(120deg);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}

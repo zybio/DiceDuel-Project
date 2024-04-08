@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COMP2132</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script src="scripts/script.js" defer></script>
+  </head>
+
+  <body>
+    <main>
+      <div class="site-wrapper">
+        <header>
+          <h1>Dice Game</h1>
+        </header>
+
+        <div class="game-container" id="game-container">
+          <h2 id="game-result"></h2>
+          <section class="gamefield">
+            <div class="player2-stand player-row">
+              <div class="player-content">
+                <h3>Computer</h3>
+                <div class="player-scores">
+                <p>
+                  Score this round:
+                  <span class="score-number animate__animated animate__jackInTheBox" id="p2-score">0</span>
+                </p>
+
+                <p>
+                  Total Score:
+                  <span class="score-number animate__animated animate__jackInTheBox" id="p2-total-score">0</span>
+                </p>
+                </div>
+              </div>
+              <div class="player-image">
+                <img class="player-img animate__animated animate__headShake animate__infinite animate__delay-1s animate__slow" src="images/kaiba2.png">
+                <div class="player-dice">
+                  <div class="p2dice" id="p2dice"></div>
+                </div>
+              </div>
+            </div>
+            <div class="player1-stand player-row">
+              <div class="player-image">
+                <img class="player-img animate__animated animate__headShake animate__infinite animate__slow" src="images/yugi2.png">
+                <div class="player-dice">
+                  <div class="p1dice" id="p1dice"></div>
+                </div>
+              </div>
+              <div class="player-content">
+                <h3>Player</h3>
+                <div class="player-scores">
+                <p>
+                  Score this round:
+                  <span class="score-number animate__animated animate__jackInTheBox" id="p1-score">0</span>
+                </p>
+
+                <p>
+                  Total Score:
+                  <span class="score-number animate__animated animate__jackInTheBox" id="p1-total-score">0</span>
+                </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="dice-container" id="dice-container">
+            <button class="player-roll-btn" id="player-roll-btn">
+              Roll the dice
+            </button>
+          </div>
+
+          <article class="game-info" id="game-info">
+            <button class="newgame-btn" id="newgame-btn">New Game</button>
+          </article>
+        </div>
+
+        <div class="instructions" id="instructions">
+          <h2>Instructions</h2>
+            <p>Believe in the heart of the cards!</p>
+          <ul>
+            <li>Have the highest total score and win the game!</li>
+            <li>Click 'New Game' to start a new game</li>
+            <li>Click 'Roll the dice' to begin a round</li>
+          </ul>
+        </div>
+
+        <div class="rules" id="rules">
+          <h2>Rules</h2>
+          <p>The game has a total of 3 rounds. Accumulate points in each round.</p> 
+          <p>The player with the highest score at the end of the game wins.</p>
+          <ul>
+            <li>Your score is the total sum of your dice pair</li>
+            <li>Rolling any 1 results in a score of 0</li>
+            <li>If you roll a matching pair, the score is the die value multiplied by 4</li> 
+          </ul>
+        </div>
+      </div>
+
+      <footer>&copy; digital world - for educational purposes only</footer>
+    </main>
+  </body>
+</html>

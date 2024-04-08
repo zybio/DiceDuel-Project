@@ -1,0 +1,11 @@
+$md: 768px;
+
+@mixin media($breakpoint: $md){
+  @media (min-width: $breakpoint){
+    @content;
+  }
+}
+
+@mixin flex{
+  display: flex;
+}
